@@ -1,4 +1,6 @@
 # Jellyfin Profile Monitor
+![icon](https://github.com/user-attachments/assets/07f8339c-7043-49f8-a692-8c65f07af1e4)
+
 A Home Assistant add-on that monitors a Jellyfin profile and allows it to be displayed as a card.
 
 ## Information
