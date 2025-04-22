@@ -46,7 +46,7 @@ Example of the media-control card:
 
 ![image](https://github.com/user-attachments/assets/e252bf6c-b27b-4c1e-916c-f78d45da594d)
 
-### Contributions
+## Contributions
 
 Pull Requests and other contributions are welcome. I've never made an HA add-on before, so things like the config_flow, an icon for the integrations menu, and HACS publishing are all beyond me.
 
