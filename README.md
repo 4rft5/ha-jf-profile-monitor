@@ -16,10 +16,12 @@ The add-on uses the API to communicate playback state and the title of the show 
 3. <a href="https://gethomepage.dev/widgets/services/jellyfin/">Create a Jellyfin API Key</a>.
    
 4. Add the following to your `configuration.yaml` file:
-   `media_player:
+   ```
+   media_player:
     - platform: ha-jf-profile-monitor
       api_key: "your_jellyfin_api_key"
-      server: "your_jellyfin_url"`
+      server: "your_jellyfin_url"
+   ```
 
 5. Restart Home Assistant.
 
