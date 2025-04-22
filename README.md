@@ -27,12 +27,15 @@ The add-on uses the API to communicate playback state and the title of the show 
 
 ## Screenshots
 A Regular Card:
+
 ![image](https://github.com/user-attachments/assets/8b3a101b-0a67-4ce2-ab95-045143ea25dc)
 
 Regular Card with playback information:
+
 ![image](https://github.com/user-attachments/assets/39348e75-05a6-42be-8094-63919c0edbcc)
 
 Example of the media-control card:
+
 ![image](https://github.com/user-attachments/assets/e252bf6c-b27b-4c1e-916c-f78d45da594d)
 
 ### Editing and Publishing
