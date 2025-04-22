@@ -38,6 +38,10 @@ Regular Card with playback information:
 
 ![image](https://github.com/user-attachments/assets/39348e75-05a6-42be-8094-63919c0edbcc)
 
+Example of the "idle" playback state:
+
+![image](https://github.com/user-attachments/assets/9851c36e-d649-4125-8b96-b3fb2a551eb4)
+
 Example of the media-control card:
 
 ![image](https://github.com/user-attachments/assets/e252bf6c-b27b-4c1e-916c-f78d45da594d)
