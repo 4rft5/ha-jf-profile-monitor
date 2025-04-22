@@ -40,11 +40,11 @@ Example of the media-control card:
 
 ![image](https://github.com/user-attachments/assets/e252bf6c-b27b-4c1e-916c-f78d45da594d)
 
-### Editing and Publishing
+### Contributions
 
 Pull Requests and other contributions are welcome. I've never made an HA add-on before, so things like the config_flow, an icon for the integrations menu, and HACS publishing are all beyond me.
 
-Another thing I couldn't figure out personally was how to include multiple lines on the media-control card. This results in the title being [Show Title] - [Episode Title]. I would prefer if they were on their own lines to make things less clunky, but alas.
+Another thing I couldn't figure out personally was how to include multiple lines on the media-control card. This results in the title being [Show Title] - [Episode Title] (or just [Episode Title] for movies). I would prefer if they were on their own lines to make things more streamlined and reduce the risk of text not being able to be read as a result of how wide the card is.
 
 Media Controls do not work, as this is more to just display the status of a profile, but would be welcomed additions if someone wanted to tackle them.
 
