@@ -1,0 +1,10 @@
+{
+    "domain": "ha-jf-profile-monitor",
+    "name": "Jellyfin Profile Monitor",
+    "version": "1.0",
+    "documentation": "https://github.com/4rft5/ha-jf-profile-monitor",
+    "issue_tracker": "https://github.com/4rft5/ha-jf-profile-monitor/issues",
+    "codeowners": ["@4rft5"],
+    "iot_class": "cloud_polling"
+  }
+  
