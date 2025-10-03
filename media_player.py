@@ -1,7 +1,7 @@
 import aiohttp
-import asyncio
 from homeassistant.components.media_player import MediaPlayerEntity
 from homeassistant.components.media_player.const import MediaPlayerState
+from .const import DOMAIN
 
 async def fetch_profiles(api_key, server):
     url = f"{server}/Users"
@@ -46,55 +46,38 @@ class JellyfinProfilePlayer(MediaPlayerEntity):
                 for session_data in data:
                     if session_data["UserId"] == self._user_id and "NowPlayingItem" in session_data:
                         item = session_data["NowPlayingItem"]
-                        self._show_title = item.get("SeriesName", "Unknown Show")
+
+                        self._show_title = item.get("SeriesName")
                         self._episode_title = item.get("Name", "N/A")
-                        if "SeriesName" in item:
-                            self._show_title = item["SeriesName"]
-                            self._episode_title = item.get("Name", "N/A")
-                            self._media_title = f"{self._show_title} - {self._episode_title}"
-                        else:
-                            self._show_title = None
-                            self._episode_title = item.get("Name", "Unknown Title")
-                            self._media_title = self._episode_title
+                        self._media_title = self._show_title or "Unknown Show"
+                        
                         tag = item.get("PrimaryImageTag")
                         id_ = item["Id"]
                         self._media_image_url = f"{self._server}/Items/{id_}/Images/Primary?tag={tag}"
+
                         playback_state = session_data.get("PlayState", {})
-
                         if playback_state.get("IsPaused", False):
-                            if self._state != MediaPlayerState.PAUSED:
-                                self._state = MediaPlayerState.PAUSED
-                                self._status = "Paused"
-                                self._icon = "mdi:pause"
+                            self._state = MediaPlayerState.PAUSED
+                            self._status = "Paused"
+                            self._icon = "mdi:pause"
                         else:
-                            if self._state != MediaPlayerState.PLAYING:
-                                self._state = MediaPlayerState.PLAYING
-                                self._status = "Playing"
-                                self._icon = "mdi:play"
-                        
+                            self._state = MediaPlayerState.PLAYING
+                            self._status = "Playing"
+                            self._icon = "mdi:play"
+
                         return
-
-        if self._state != MediaPlayerState.IDLE:
-            self._state = MediaPlayerState.IDLE
-            self._status = "Idle"
-            self._icon = "mdi:stop"
-
-        self._media_title = None
-        self._episode_title = None
-        self._show_title = None
-        self._media_image_url = None
+    
+                self._state = MediaPlayerState.IDLE
+                self._status = "Idle"
+                self._media_title = None
+                self._episode_title = None
+                self._show_title = None
+                self._media_image_url = None
+                self._icon = "mdi:stop"
 
     @property
     def state(self):
         return self._status
-
-    @property
-    def media_title(self):
-        return self._media_title
-
-    @property
-    def media_artist(self):
-        return self._episode_title
 
     @property
     def icon(self):
@@ -110,13 +93,28 @@ class JellyfinProfilePlayer(MediaPlayerEntity):
             "Show Title": self._show_title,
             "Episode Title": self._episode_title,
         }
+    
+    @property
+    def media_title(self):
+        if self._episode_title:
+            return self._episode_title
+        return self._show_title or self._media_title
 
-async def async_setup_platform(hass, config, async_add_entities=None, discovery_info=None):
-    api_key = config.get("api_key")
-    server = config.get("server")
+    @property
+    def media_artist(self):
+        if self._show_title:
+            return self._show_title
+        return None
+    
+    @property
+    def media_content_type(self):
+        return "music"
 
-    if not api_key or not server:
-        raise ValueError("API key and server URL must be provided in configuration.yaml")
+async def async_setup_entry(hass, entry, async_add_entities):
+    """Set up media_player from a config entry."""
+    data = hass.data[DOMAIN][entry.entry_id]
+    api_key = data["api_key"]
+    server = data["server_url"]
 
     profiles = await fetch_profiles(api_key, server)
 
