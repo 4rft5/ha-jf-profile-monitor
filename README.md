@@ -48,7 +48,7 @@ Movie:
 
 ## Contributions
 
-Pull Requests and other contributions are welcome. I've never made an HA add-on before, so things like the config_flow, an icon for the integrations menu, and HACS publishing are all beyond me.
+Pull Requests and other contributions are welcome. I've never made an HA add-on before, so things like the icon for the integrations menu and HACS publishing are all beyond me.
 
 Media Controls do not work, as this is more to just display the status of a profile, but would be welcomed additions if someone wanted to tackle them.
 
