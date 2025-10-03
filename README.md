@@ -16,15 +16,9 @@ The add-on uses the API to communicate playback state and the title of the show 
 
 3. <a href="https://gethomepage.dev/widgets/services/jellyfin/">Create a Jellyfin API Key</a>.
    
-4. Add the following to your `configuration.yaml` file:
-   ```
-   media_player:
-    - platform: ha-jf-profile-monitor
-      api_key: "your_jellyfin_api_key"
-      server: "your_jellyfin_url"
-   ```
+4. Add Integration by clicking "Add Integration" and searching for "Jellyfin Profile Monitor".
 
-5. Restart Home Assistant.
+5. Input API Key and Jellyfin Server IP.
 
 6. Add the newly-created entity to your cards or dashboard.
 
@@ -41,15 +35,18 @@ Example of the "idle" playback state:
 
 ![image](https://github.com/user-attachments/assets/9851c36e-d649-4125-8b96-b3fb2a551eb4)
 
-Example of the media-control card:
+Examples of the media-control card:
 
-![image](https://github.com/user-attachments/assets/e252bf6c-b27b-4c1e-916c-f78d45da594d)
+TV Show:
+![image](https://github.com/user-attachments/assets/2d83dbfc-d834-487c-b658-6db1d1713258)
+
+Movie
+![image](https://github.com/user-attachments/assets/5a60d94c-159a-4b7b-90d9-e2702e5f29dc)
+
 
 ## Contributions
 
 Pull Requests and other contributions are welcome. I've never made an HA add-on before, so things like the config_flow, an icon for the integrations menu, and HACS publishing are all beyond me.
-
-Another thing I couldn't figure out personally was how to include multiple lines on the media-control card. This results in the title being [Show Title] - [Episode Title] (or just [Episode Title] for movies). I would prefer if they were on their own lines to make things more streamlined and reduce the risk of text not being able to be read as a result of how wide the card is.
 
 Media Controls do not work, as this is more to just display the status of a profile, but would be welcomed additions if someone wanted to tackle them.
 
