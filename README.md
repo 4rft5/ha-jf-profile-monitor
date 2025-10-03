@@ -18,7 +18,7 @@ The add-on uses the API to communicate playback state and the title of the show 
    
 4. Add Integration by clicking "Add Integration" and searching for "Jellyfin Profile Monitor".
 
-5. Input API Key and Jellyfin Server IP.
+5. Input API Key and Jellyfin Server IP/hostname (e.g. `jellyfin.local`, `localhost:8096` or `192.168.1.1:8096`).
 
 6. Add the newly-created entity to your cards or dashboard.
 
