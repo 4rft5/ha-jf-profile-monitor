@@ -38,9 +38,11 @@ Example of the "idle" playback state:
 Examples of the media-control card:
 
 TV Show:
+
 ![image](https://github.com/user-attachments/assets/2d83dbfc-d834-487c-b658-6db1d1713258)
 
-Movie
+Movie:
+
 ![image](https://github.com/user-attachments/assets/5a60d94c-159a-4b7b-90d9-e2702e5f29dc)
 
 
