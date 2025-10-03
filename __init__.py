@@ -12,5 +12,4 @@ async def async_setup_entry(hass, entry):
 
 async def async_unload_entry(hass, entry):
     hass.data[DOMAIN].pop(entry.entry_id, None)
-
-    return await hass.config_entries.async_forward_entry_unload(entry, ["media_player"])
+    return await hass.config_entries.async_forward_entry_unload(entry, "media_player")
