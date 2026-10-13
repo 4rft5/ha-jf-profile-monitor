@@ -41,8 +41,9 @@ def _write_image(img_path, img_bytes):
 
 
 class JellyfinProfilePlayer(MediaPlayerEntity):
-    def __init__(self, user_id, username, api_key, server, hass):
+    def __init__(self, user_id, username, api_key, server, hass, entry_id):
         self._attr_name = f"Jellyfin - {username}"
+        self._attr_unique_id = f"{entry_id}_{user_id}"
         self._attr_available = True
         self._user_id = user_id
         self._username = username
@@ -205,6 +206,8 @@ async def async_setup_entry(hass, entry, async_add_entities):
     for profile in profiles:
         user_id = profile["Id"]
         username = profile["Name"]
-        players.append(JellyfinProfilePlayer(user_id, username, api_key, server, hass))
+        players.append(
+            JellyfinProfilePlayer(user_id, username, api_key, server, hass, entry.entry_id)
+        )
 
-    async_add_entities(players)
+    async_add_entities(players, True)

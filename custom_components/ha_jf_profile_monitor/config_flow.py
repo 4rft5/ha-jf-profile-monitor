@@ -15,6 +15,8 @@ class JFProfileMonitorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         if user_input is not None:
             user_input["server_url"] = user_input["server_url"].rstrip("/")
+            await self.async_set_unique_id(user_input["server_url"])
+            self._abort_if_unique_id_configured()
             try:
                 profiles = await fetch_profiles(
                     self.hass, user_input["api_key"], user_input["server_url"]
