@@ -1,4 +1,8 @@
 {
   "name": "Jellyfin Profile Monitor",
+  "domain": "ha_jf_profile_monitor",
+  "documentation": "https://github.com/4rft5/ha-jf-profile-monitor",
+  "issue_tracker": "https://github.com/4rft5/ha-jf-profile-monitor/issues",
+  "codeowners": ["@4rft5"],
   "render_readme": true
 }
