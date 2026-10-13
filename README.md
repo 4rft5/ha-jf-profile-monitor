@@ -10,6 +10,24 @@ As a result, it will not infinitely create entities for devices, instead only ma
 The add-on uses the API to communicate playback state and the title of the show and episode. The playback state status is represented and updated as the icon for the card.
 
 ## Installation
+
+### HACS
+
+1. Add this repo to HACS as a custom repository:
+   
+[![Add Repository](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=4rft5&repository=ha-jf-profile-monitor&category=Integration)
+
+2. Install the integration from HACS
+
+3. Restart Home Assistant
+
+4. Setup the integration using the UI:
+ 
+[![Add Integration](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ha_jf_profile_monitor)
+
+5. Add the newly-created entity to your cards or dashboard.
+
+### Manual
 1. Download the latest version of the add-on from <a href="https://github.com/4rft5/ha-jf-profile-monitor/releases">Releases</a>.
 
 2. Place the extracted ha-jf-profile-monitor folder into your `custom_components` folder.
